@@ -2,6 +2,7 @@ import './App.css';
 import Nav from './components/Nav';
 import UserDetails from './components/UserDetails';
 import CardConteiner from './components/CardConteiner';
+import Toast from './components/Toast';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -11,8 +12,9 @@ function App() {
       <BrowserRouter>
         <Nav/>
         <Switch>
-          <Route exact path = '/users' component={ CardConteiner }/>
+          <Route exact path = '/' component={ CardConteiner }/>
           <Route exact path = '/:user.login' component={ UserDetails }/>
+          <Route exact path = '/error' component={ Toast }/>
         </Switch>
       </BrowserRouter>
     </div>
