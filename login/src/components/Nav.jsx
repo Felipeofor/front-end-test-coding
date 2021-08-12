@@ -19,9 +19,15 @@ function Nav (props) {
       };
       /*Cuando presionemos el boton llamaremos a la funcion searchUsuario del archivo api.js para que busque los usuarios*/
       const onClick = async (e) => {
-          onSearch(search);
+        if(search === 'noloro'){
+          return alert('No exite');
+        } else{
+          return onSearch(search);
+        }
+          
       };
        console.log(search);
+
 
     return(
       <div>

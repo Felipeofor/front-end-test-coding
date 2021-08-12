@@ -1,5 +1,5 @@
-import React, { Link } from 'react';
-import { searchUsuario } from '../api';
+// import React, { Link } from 'react';
+// import { searchUsuario } from '../api';
 
 function Card () {
 
