@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+// import { useParams } from 'react-router-dom';
 import Card from './Card';
 
 function CardConteiner() {
 
     const [user, setUsuarios] = useState()
-    const { productById } = useParams();
+    // const { productById } = useParams();
 
 
     // API CALL  - Llamado a un archivo .JSON local
@@ -24,20 +24,19 @@ function CardConteiner() {
 
     useEffect(() => {
         getUsuarios()
-    }, [productById])
+    }, [])
 
     return(
         <div className="CardConteiner">
-           { !user ? "...Cargando" :
+           { !user ? "Cargando..." :
            user.map( (use, index) =>{
-               return <li>{use.id}</li>
+               return <Card
+               key = {index}
+               avatar = {use.avatar_url}
+               id = {use.id}
+               name = {use.login}
+               />
            }) 
-            // <Card
-            // key = {user.id}
-            // avatar = {user.avatar_url}
-            // id = {user.id}
-            // name = {user.login}
-            // />}
         }</div>
     )
 }
