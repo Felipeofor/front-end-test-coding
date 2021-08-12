@@ -13,10 +13,10 @@ function App() {
       <BrowserRouter>
         <Nav/>
         <Switch>
-          <Route exact path = '/' component={ Home }/>
           <Route exact path = '/busqueda' component={ CardConteiner }/>
           <Route exact path = '/:user.login' component={ UserDetails }/>
           <Route exact path = '/error' component={ Toast }/>
+          <Route exact path = '/' component={ Home }/>
         </Switch>
       </BrowserRouter>
     </div>

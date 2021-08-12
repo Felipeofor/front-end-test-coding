@@ -18,6 +18,7 @@ function CardConteiner() {
         // Vemos qué llegó
         // setUsuarios(responseData.filter((items) => items.id === productById)[0]);
         setUsuarios(responseData)
+        console.log(responseData)
         console.log(responseData.items[0].login)
     }
 
@@ -27,13 +28,17 @@ function CardConteiner() {
 
     return(
         <div className="CardConteiner">
-            <Card
-            // key = {user[0].id}
-            // avatar = {user[0].avatar_url}
-            // id = {user[0].id}
-            // name = {user[0].login}
-            />
-        </div>
+           { !user ? "...Cargando" :
+           user.map( (use, index) =>{
+               return <li>{use.id}</li>
+           }) 
+            // <Card
+            // key = {user.id}
+            // avatar = {user.avatar_url}
+            // id = {user.id}
+            // name = {user.login}
+            // />}
+        }</div>
     )
 }
 

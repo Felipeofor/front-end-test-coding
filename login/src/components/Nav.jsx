@@ -1,5 +1,7 @@
 //Importamos los componentes
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 /*Le avisamos a React que renderice con cada cambio de estado*/
 const { useState } = React; 
 
@@ -33,7 +35,7 @@ function Nav (props) {
       <div>
         <nav className="navbar navbar-light bg-light">
           <div className="container-fluid">
-            <div className="navbar-brand">Lista de Usuarios</div>
+            <Link to="/" className="navbar-brand">Lista de Usuarios</Link>
             <form className="d-flex">
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={ onChange }/>
               { search.length > 3 ? <button className="btn btn-outline-success" type="submit" onClick={ onClick }>Search</button> : <div>Ingrese al menos cuatro caracteres</div>}
