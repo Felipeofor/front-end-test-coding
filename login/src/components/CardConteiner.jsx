@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Card from './Card';
 
 function Toast() {
@@ -7,7 +7,7 @@ function Toast() {
 
     // API CALL  - Llamado a un archivo .JSON local
     // Creo una función asincrónica
-    const getProducts = async () => {
+    const getUsuarios = async () => {
         // Espero a que la data se fetchee
         const data = await fetch('https://api.github.com/search/users?q=felipe')
         // Aplico el método JSON() para extraer la respuesta a la petición
@@ -16,6 +16,10 @@ function Toast() {
         console.log(responseData);
         setUsuarios(responseData)
     }
+
+    useEffect(() => {
+        setTimeout(() => getUsuarios(), 500)
+    }, [])
 
     return(
         <div className="CardConteiner">
