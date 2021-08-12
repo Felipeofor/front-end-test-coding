@@ -1,6 +1,7 @@
 import './App.css';
 import Nav from './components/Nav';
-import Card from './components/Card';
+import UserDetails from './components/UserDetails';
+import CardConteiner from './components/CardConteiner';
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -10,7 +11,8 @@ function App() {
       <BrowserRouter>
         <Nav/>
         <Switch>
-          <Route exact path = '/:user.login' component={ Card }/>
+          <Route exact path = '/users' component={ CardConteiner }/>
+          <Route exact path = '/:user.login' component={ UserDetails }/>
         </Switch>
       </BrowserRouter>
     </div>

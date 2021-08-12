@@ -1,11 +1,10 @@
-/*Aqui estan las constantes que consumen de la api */
+import React from 'react';
 
+const UserDetails = async(user) => {
 
-export const searchUsuario = async (usuario) => {
-    /*Protegemos la aplicacion ante cualquier error que pueda traer la api con try catch */
     try {
         /*Creamos una variable que consume de la api el perfil que el usuario este buscando */
-        let url = `https://api.github.com/search/users?q=`/*Buscamos el pokemon que el usuario ingreso */
+        let url = `https://api.github.com/users/${user}`/*Buscamos el pokemon que el usuario ingreso */
         const response = await fetch(url);/*Fetch nos permite obtener la informacion de esa url*/
         const data = await response.json();/*Pasamos la informacion recibida a Json*/console.log(data)
         return data;/*Retornamos esa infomarcion a nuestro componente de React */
@@ -14,4 +13,14 @@ export const searchUsuario = async (usuario) => {
     catch (err) {
 
     }
-};
+
+    return(
+        <div>
+            ${user.avatar_url}
+           <h5>${user.login}</h5>
+           <h5>${user.id}</h5>
+        </div>   
+    );
+}
+
+export default UserDetails;
