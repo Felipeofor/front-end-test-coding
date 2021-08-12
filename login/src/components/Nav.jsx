@@ -20,23 +20,23 @@ function Nav (props) {
       /*Cuando presionemos el boton llamaremos a la funcion searchUsuario del archivo api.js para que busque los usuarios*/
       const onClick = async (e) => {
         if(search === 'noloro'){
-          return alert('No exite');
+          return alert('Busqueda no permitida.');
         } else{
           return onSearch(search);
         }
           
       };
-       console.log(search);
+      //  console.log(search);
 
 
     return(
       <div>
-        <nav class="navbar navbar-light bg-light">
-          <div class="container-fluid">
-            <a class="navbar-brand">Lista de Usuarios</a>
-            <form class="d-flex">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={ onChange }/>
-              { search.length > 3 ? <button class="btn btn-outline-success" type="submit" onClick={ onClick }>Search</button> : <div>Ingrese al menos cuatro caracteres</div>}
+        <nav className="navbar navbar-light bg-light">
+          <div className="container-fluid">
+            <div className="navbar-brand">Lista de Usuarios</div>
+            <form className="d-flex">
+              <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" onChange={ onChange }/>
+              { search.length > 3 ? <button className="btn btn-outline-success" type="submit" onClick={ onClick }>Search</button> : <div>Ingrese al menos cuatro caracteres</div>}
             </form>
           </div>
         </nav>
