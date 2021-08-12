@@ -1,10 +1,10 @@
-import React, { Link } from 'react';
+import React, { Link } from 'react-router-dom';
 
 function Toast() {
 
     return(
-        <div>
-               <h5>Error</h5>
+        <div className="toast">
+               <h5>¡Error!</h5>
                <Link to="/">Volver al buscador</Link> 
         </div>   
     );
