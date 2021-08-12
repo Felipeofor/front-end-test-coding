@@ -20,7 +20,7 @@ function Nav (props) {
       /*Cuando presionemos el boton llamaremos a la funcion searchUsuario del archivo api.js para que busque los usuarios*/
       const onClick = async (e) => {
         if(search === 'noloro'){
-          return alert('Busqueda no permitida.');
+          return alert('Busqueda no permitida');
         } else{
           return onSearch(search);
         }

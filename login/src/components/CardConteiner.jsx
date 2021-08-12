@@ -13,7 +13,6 @@ function CardConteiner() {
     const getUsuarios = async () => {
         // Espero a que la data se fetchee
         const data = await fetch('https://api.github.com/search/users?q=YOUR_NAME')
-        console.log(data)
         // Aplico el método JSON() para extraer la respuesta a la petición
         const responseData = await data.json()
         // Vemos qué llegó
@@ -24,15 +23,15 @@ function CardConteiner() {
 
     useEffect(() => {
         getUsuarios()
-    }, [])
+    }, [productById])
 
     return(
         <div className="CardConteiner">
             <Card
-            key = {user.id}
-            avatar = {user.avatar_url}
-            id = {user.id}
-            name = {user.login}
+            // key = {user[0].id}
+            // avatar = {user[0].avatar_url}
+            // id = {user[0].id}
+            // name = {user[0].login}
             />
         </div>
     )
