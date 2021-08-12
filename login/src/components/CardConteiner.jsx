@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import Card from './Card';
 
-function Toast() {
+function CardConteiner() {
 
     const [user, setUsuarios] = useState()
-    const {productById} = useParams();
+    const { productById } = useParams();
 
 
     // API CALL  - Llamado a un archivo .JSON local
@@ -17,8 +17,9 @@ function Toast() {
         // Aplico el método JSON() para extraer la respuesta a la petición
         const responseData = await data.json()
         // Vemos qué llegó
-        setUsuarios(responseData.filter((items) => items.id=== productById)[0]);
-        console.log(setUsuarios)
+        // setUsuarios(responseData.filter((items) => items.id === productById)[0]);
+        setUsuarios(responseData)
+        console.log(responseData.items[0].login)
     }
 
     useEffect(() => {
@@ -28,13 +29,13 @@ function Toast() {
     return(
         <div className="CardConteiner">
             <Card
-            // key = {user.id}
-            // avatar = {user.avatar_url}
-            // id = {user.id}
-            // name = {user.login}
+            key = {user.id}
+            avatar = {user.avatar_url}
+            id = {user.id}
+            name = {user.login}
             />
         </div>
     )
 }
 
-export default Toast;
+export default CardConteiner;
