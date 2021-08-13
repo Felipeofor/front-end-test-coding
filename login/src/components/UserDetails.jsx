@@ -24,9 +24,7 @@ const UserDetails = (use) => {
         // Vemos qué llegó
         setUsers(responseDataUser);
         }catch(err){
-            console.log('Resultado de Err: ',err)
             setError(err)
-            console.log(error)
             setShowError(true)
         }
     }
