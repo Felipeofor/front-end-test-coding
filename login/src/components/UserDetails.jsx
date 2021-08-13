@@ -31,15 +31,14 @@ const UserDetails = (use) => {
 
     useEffect(()=>{
         getUserDetails()
-    },[userLogin])
+    },[userLogin]);
 
-    console.log(use)
     return(
 
         <div className="Card">
             {showError ?  <Toast value={{error}}/>
             :
-        <div class="card-usuario">
+        <div className="card-usuario">
             <div className="seccion-avatar">
                 <div className="avatar">
                     <div className="img-avatar">

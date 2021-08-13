@@ -12,7 +12,7 @@ function CardConteiner() {
             {showError ? <Toast value= {{error}}/> 
             : <div className="cardConteiner">
             {users.items.slice(0,10).map((e)=>(
-            <Link to={`/usuario/${e.login}`}>
+            <Link key={e.id} to={`/usuario/${e.login}`}>
                 <User
                     login = {e.login}
                     id = {e.id}
