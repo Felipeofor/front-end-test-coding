@@ -93,8 +93,9 @@ a:link, a:visited, a:active {
   }
 
 .cardConteiner {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-column-gap: 50px;
+    grid-template-columns: auto auto;
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
@@ -189,6 +190,8 @@ a:link, a:visited, a:active {
 @media (min-width: 1px) and (max-width: 600.98px) {
     .cardConteiner {
         font-size: 1.2rem;
+        display: grid;
+        grid-template-columns: auto;
     }
 
     .cards {
@@ -198,7 +201,12 @@ a:link, a:visited, a:active {
     }
 }
 
-@media (min-width: 601px) and (max-width: 1600.98px) {
+@media (min-width: 601px) and (max-width: 1200.98px) {
+
+    .cardConteiner{
+      grid-template-columns: auto;
+    }
+
     .cards {
       justify-content: center;
       width: 400px;

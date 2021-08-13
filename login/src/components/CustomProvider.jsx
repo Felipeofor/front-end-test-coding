@@ -11,7 +11,7 @@ const CustomProvider =  ({children}) =>{
     const getUsuarios = async () => {
         try{
         // Espero a que la data se fetchee
-        const data = await fetch(`https://ai.github.com/search/users?q=${search}`)
+        const data = await fetch(`https://api.github.com/search/users?q=${search}`)
         // Aplico el método JSON() para extraer la respuesta a la petición
         const responseData = await data.json()
         // Vemos qué llegó
