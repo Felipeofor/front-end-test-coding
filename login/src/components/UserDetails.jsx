@@ -1,24 +1,14 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import Context from './Context';
 
-const UserDetails = async(user) => {
-
-    try {
-        /*Creamos una variable que consume de la api el perfil que el usuario este buscando */
-        let url = `https://api.github.com/users/${user}`/*Buscamos el pokemon que el usuario ingreso */
-        const response = await fetch(url);/*Fetch nos permite obtener la informacion de esa url*/
-        const data = await response.json();/*Pasamos la informacion recibida a Json*/console.log(data)
-        return data;/*Retornamos esa infomarcion a nuestro componente de React */
-        
-    }
-    catch (err) {
-
-    }
-
+const UserDetails = (use) => {
+    const {users} = useContext(Context)
+    console.log(use)
     return(
-        <div>
-            ${user.avatar_url}
-           <h5>${user.login}</h5>
-           <h5>${user.id}</h5>
+        <div key={users.id}>
+            <img alt="imagen avatar" className="cardConteiner_imagen" src={users.avatar_url}/>
+            <h5>${users.login}</h5>
+            <h5>${users.id}</h5>
         </div>   
     );
 }

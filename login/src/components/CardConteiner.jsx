@@ -1,27 +1,21 @@
-import React, { useState, useEffect } from 'react';
-// import { useParams } from 'react-router-dom';
-import Card from './Card';
+import { Link } from "react-router-dom";
 import { useContext } from 'react';
 import Context from './Context';
+import UserDetails from "./UserDetails";
 
-function CardConteiner() {
-
-    
+function CardConteiner(props) {
     const {users} = useContext(Context)
-    // const { productById } = useParams();
-
-
-    // API CALL  - Llamado a un archivo .JSON local
-    // Creo una función asincrónica
-
 
     return(
-        <div className="CardConteiner">
-            {console.log("users",users)}
+        <div className="cardConteiner">
             {users.items.slice(0,10).map((e)=>(
-                <div>{e.id}</div>
+            <Link to={`${e.login}`}>
+                <div key={e.login} className="cardConteiner_card">
+                    <ul>
+                        <li >Usuario: {e.login} -----ID: {e.id}</li>
+                    </ul>
+                </div></Link>
             ))}
-
         </div>
     )
 }

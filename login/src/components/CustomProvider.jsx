@@ -7,15 +7,12 @@ const CustomProvider =  ({children}) =>{
     const [users,setUsers] =useState({items:[]})
 
     const getUsuarios = async () => {
-        console.log("search:",search)
         // Espero a que la data se fetchee
         const data = await fetch(`https://api.github.com/search/users?q=${search}`)
         // Aplico el método JSON() para extraer la respuesta a la petición
         const responseData = await data.json()
         // Vemos qué llegó
-        // setUsuarios(responseData.filter((items) => items.id === productById)[0]);
         setUsers(responseData)
-        console.log("items",responseData.items)
     }
 
     return(

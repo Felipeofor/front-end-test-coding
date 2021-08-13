@@ -4,45 +4,28 @@ import { Link } from 'react-router-dom';
 import { useContext } from 'react';
 import Context from './Context'
 import { useHistory } from 'react-router';
-/*Le avisamos a React que renderice con cada cambio de estado*/
-const { useState } = React; 
-
 
 function Nav () {
-
-      /*Ingreso el valor inicial del search*/
-      // const { onSearch } = props;
-      const {onSearch} = {};
- //     const [search,setSearch] = useState("");
- const {setSearch ,getUsuarios,search} = useContext(Context)
- const history = useHistory()
- 
-  
-      const onChange = (e) => {
-          /*Actualizamos el DOM con cada cambio que ingrese el usuario*/
-          setSearch(e.target.value);
-          if (e.target.value.lenght === 0) {
-            setSearch(search);
-         }
-      };
-      /*Cuando presionemos el boton llamaremos a la funcion searchUsuario del archivo api.js para que busque los usuarios*/
-      const onClick =  (e) => {
-        e.preventDefault()
+      // const {onSearch} = {};
+    const {setSearch ,getUsuarios,search} = useContext(Context)
+    const history = useHistory()
+    const onChange = (e) => {
+      /*Actualizamos el DOM con cada cambio que ingrese el usuario*/
+      setSearch(e.target.value);
+      if (e.target.value.lenght === 0) {
+      setSearch(search);
+      }
+    };
+    /*Cuando presionemos el boton llamaremos a la funcion searchUsuario del archivo api.js para que busque los usuarios*/
+    const onClick =  (e) => {
+      e.preventDefault()
         if(search === 'noloro'){
-          return alert('Busqueda no permitida');
+        return alert('Busqueda no permitida');
         } else{
-          console.log("antes del getUsuario",search)
-          
-           
-           
-           getUsuarios()
-          history.push('/usuarios')
-
-        }
-          
+        getUsuarios()
+        history.push('/usuarios')
+      }  
       };
-      //  console.log(search);
-
 
     return(
       <div>
