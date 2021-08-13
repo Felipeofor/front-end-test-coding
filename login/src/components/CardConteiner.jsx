@@ -1,20 +1,19 @@
 import { Link } from "react-router-dom";
 import { useContext } from 'react';
-import Context from './Context';
-import UserDetails from "./UserDetails";
+import Context  from './Context';
+import User from './User';
 
-function CardConteiner(props) {
+function CardConteiner() {
     const {users} = useContext(Context)
 
     return(
         <div className="cardConteiner">
             {users.items.slice(0,10).map((e)=>(
-            <Link to={`${e.login}`}>
-                <div key={e.login} className="cardConteiner_card">
-                    <ul>
-                        <li >Usuario: {e.login} -----ID: {e.id}</li>
-                    </ul>
-                </div></Link>
+            <Link to={`/usuario/${e.login}`}>
+                <User
+                    login = {e.login}
+                    id = {e.id}
+                /></Link>
             ))}
         </div>
     )

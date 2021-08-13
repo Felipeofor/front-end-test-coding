@@ -15,8 +15,9 @@ const CustomProvider =  ({children}) =>{
         setUsers(responseData)
     }
 
+
     return(
-        <Provider value={{search, setSearch,users,getUsuarios}} >
+        <Provider value={{search, setSearch, users, getUsuarios}} >
             {children}
             </Provider>
 

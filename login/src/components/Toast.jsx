@@ -1,13 +1,14 @@
 import { Link } from 'react-router-dom';
 import React from 'react';
 
-function Toast() {
+function Toast({value}) {
+
+    const {error} = value
 
     return(
-        <div className="toast">
-            Holaaaa
-               <h5>¡Error!</h5>
-               <Link to="/">Volver al buscador</Link> 
+        <div className="cardConteiner">
+               <h5 >{error.message}</h5>
+               <Link to="/">Volver al Home</Link> 
         </div>   
     );
 }

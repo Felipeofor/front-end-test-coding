@@ -16,7 +16,7 @@ function App() {
         <Nav/>
         <Switch>
           <Route exact path = '/usuarios' component={ CardConteiner }/>
-          <Route exact path = '/:user.login' component={ UserDetails }/>
+          <Route exact path = '/usuario/:userLogin' component={ UserDetails }/>
           <Route exact path = '/error' component={ Toast }/>
           <Route exact path = '/' component={ Home }/>
         </Switch>

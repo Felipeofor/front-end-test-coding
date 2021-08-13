@@ -6,7 +6,6 @@ import Context from './Context'
 import { useHistory } from 'react-router';
 
 function Nav () {
-      // const {onSearch} = {};
     const {setSearch ,getUsuarios,search} = useContext(Context)
     const history = useHistory()
     const onChange = (e) => {
